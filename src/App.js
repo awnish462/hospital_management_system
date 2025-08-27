@@ -82,6 +82,8 @@ import PharmacyPage from './pages/PharmacyPage';
 import UserManagementPage from './pages/UserManagementPage';
 import LoginPage from './pages/LoginPage'; // <-- This import was missing
 import ProtectedRoute from './components/ProtectedRoute'; // <-- This import was missing
+import SignupPage from './pages/SignupPage';
+import PatientBookingPage from './pages/PatientBookingPage';
 
 const AppLayout = () => {
     const { user } = useAuth();
@@ -115,6 +117,7 @@ function App() {
         <Routes>
           {/* 'LoginPage' is now defined */}
           <Route path="/login" element={<LoginPage />} />
+           <Route path="/signup" element={<SignupPage />} />
           {/* 'ProtectedRoute' is now defined */}
           <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
             <Route path="/" element={<DashboardPage />} />
@@ -125,6 +128,7 @@ function App() {
             <Route path="/billing" element={<BillingPage />} />
             <Route path="/pharmacy" element={<PharmacyPage />} />
             <Route path="/admin/users" element={<UserManagementPage />} />
+            <Route path="/book-appointment" element={<PatientBookingPage />} />
           </Route>
         </Routes>
       </Router>

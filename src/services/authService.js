@@ -15,11 +15,16 @@ const getAllUsers = () => {
     // CORRECT: Ensure the axios Promise is returned
     return axios.get(`${API_URL}/users`);
 };
+const signup = (signupData) => {
+    // signupData should be an object with { name, age, gender, username, password }
+    return axios.post(`${API_URL}/signup`, signupData);
+};
 
 const authService = {
     login,
     register,
-    getAllUsers
+    getAllUsers,
+    signup
 };
 
 export default authService;
